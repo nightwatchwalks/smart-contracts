@@ -1,28 +1,8 @@
 # Night Watch
 
-Night Watch is an experimental, unique, and deflationary art collection with an on-chain game. Made by [Kaybid](https://twitter.com/KaybidSteps) and [Yigit Duman](https://twitter.com/YigitDuman).
+Night Watch is an art collection of 455 animated impossible animal trios strolling around in a mysterious void. Each animation has 15 frames, and each frame of each animation is an NFT. By collecting the same frames of an animation in the same wallet, you form an animation of those frames. Your goal is to complete the animation by collecting all 15 frames.
 
-## Background
-
-#### **455 Unique Animations**
-
-Each animation is hand-made and includes 15 frames.
-
-(15 frames, 3 animals) = 455
-
-#### **6825 Frames, 6825 Tokens**
-
-Each frame is a one-of-a-kind digital asset / NFT!
-
-(455 animations x 15 frames) = 6825
-
-#### **Decreasing Supply**
-
-The total supply decreases from 6825 as frames are merged. It can go as low as to 455!
-
-#### **Weekly Auctions**
-
-10% of the supply reserved to be auctioned every week with a starting price of 0.
+Made by [Kaybid](https://twitter.com/KaybidSteps) and [Yigit Duman](https://twitter.com/YigitDuman).
 
 ## Launch Roadmap
 
@@ -57,13 +37,6 @@ The total supply decreases from 6825 as frames are merged. It can go as low as t
 
 Not yet disclosed.
 
-<!-- | Contract              | Mainnet                                                                                                                 | Goerli                                                                                                                         |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `NightWatch`          | [`0x60bb1e2aa1c9acafb4d34f71585d7e959f387769`](https://etherscan.io/address/0x60bb1e2aa1c9acafb4d34f71585d7e959f387769) | [`0x60bb1e2aa1c9acafb4d34f71585d7e959f387769`](https://goerli.etherscan.io/address/0x60bb1e2aa1c9acafb4d34f71585d7e959f387769) |
-| `NightWatchAuctioner` | [`0x600df00d3e42f885249902606383ecdcb65f2e02`](https://etherscan.io/address/0x600df00d3e42f885249902606383ecdcb65f2e02) | [`0x600df00d3e42f885249902606383ecdcb65f2e02`](https://goerli.etherscan.io/address/0x600df00d3e42f885249902606383ecdcb65f2e02) |
-| `NightWatchMetadata`  | [`0x600000000a36f3cd48407e35eb7c5c910dc1f7a8`](https://etherscan.io/address/0x600000000a36f3cd48407e35eb7c5c910dc1f7a8) | [`0x600000000a36f3cd48407e35eb7c5c910dc1f7a8`](https://goerli.etherscan.io/address/0x600000000a36f3cd48407e35eb7c5c910dc1f7a8) |
-| `NightWatchVRF`       | [`0x600000000a36f3cd48407e35eb7c5c910dc1f7a8`](https://etherscan.io/address/0x600000000a36f3cd48407e35eb7c5c910dc1f7a8) | [`0x600000000a36f3cd48407e35eb7c5c910dc1f7a8`](https://goerli.etherscan.io/address/0x600000000a36f3cd48407e35eb7c5c910dc1f7a8) | -->
-
 ## Usage
 
 You will need a copy of [Foundry](https://github.com/foundry-rs/foundry) installed before proceeding. See the [installation guide](https://github.com/foundry-rs/foundry#installation) for details.
@@ -71,8 +44,8 @@ You will need a copy of [Foundry](https://github.com/foundry-rs/foundry) install
 To build the contracts:
 
 ```sh
-git clone https://github.com/uniodex/night-watch.git
-cd night-watch
+git clone https://github.com/nightwatchwalks/smart-contracts.git
+cd smart-contracts
 forge install
 ```
 
@@ -86,10 +59,10 @@ forge test
 
 ### Run Slither
 
-After [installing Slither](https://github.com/crytic/slither#how-to-install), run:
+After [installing Slither](https://github.com/crytic/slither#how-to-install), run in the main folder:
 
 ```sh
-slither src/ --solc-remaps 'forge-std/=lib/forge-std/src/ solmate/=lib/solmate/src/ erc721a/=lib/erc721a/contracts/ chainlink/=lib/chainlink-brownie-contracts/contracts/src/ openzeppelin-erc721/=lib/openzeppelin-contracts/contracts/token/ERC721/ solady/=lib/solady/src/ solarray/=lib/solarray/src/' --filter-paths 'lib'
+slither .
 ```
 
 ### Update Gas Snapshots
@@ -107,12 +80,13 @@ In order to deploy the Night Watch contracts, set the relevant constants in the 
 ```sh
 export PRIVATE_KEY=$PRIVATE_KEY
 
-forge script script/deploy/Deploy.s.sol:Deploy --rpc-url $RPC_URL --broadcast --verify --etherscan-api-key $API_KEY
+forge script script/DeployNightWatch.s.sol:Deploy --rpc-url $RPC_URL --broadcast --verify --etherscan-api-key $API_KEY
+forge script script/DeployVendor.s.sol:DeployVendor --rpc-url $RPC_URL --broadcast --verify --etherscan-api-key $API_KEY
 ```
 
 ### Other Scripts
 
-Check the /script and /js-scripts folders to see helpful scripts for testing and post-deployment phase of Night Watch.
+Check the /script and /script/js folders to see helpful scripts for testing and post-deployment phase of Night Watch.
 
 ## Special Thanks
 
@@ -120,7 +94,7 @@ We're grateful to the open source community and awesome developers of Web3 for t
 
 - transmissions11 and contributors of Solmate
 - Vectorized and contributors of Solady
-- Art Gobblers Team for their open source smart contracts
+- Paradigm for their open source smart contracts
 - Foundry creators and contributors
 - Chiru Labs and contributors of ERC721A
 
@@ -128,4 +102,4 @@ We're grateful to the open source community and awesome developers of Web3 for t
 
 [MIT](LICENSE) © 2023 Night Watch
 
-(License is for smart contracts. Visual artworks aren't included.)
+(License is for smart contracts. Artworks, animations and visuals aren't included.)
