@@ -1,0 +1,45 @@
+[submodule "lib/solmate"]
+	path = lib/solmate
+	url = https://github.com/transmissions11/solmate
+[submodule "lib/erc721a"]
+	path = lib/erc721a
+	url = https://github.com/chiru-labs/erc721a
+[submodule "lib/chainlink-brownie-contracts"]
+	path = lib/chainlink-brownie-contracts
+	url = https://github.com/smartcontractkit/chainlink-brownie-contracts
+[submodule "lib/solady"]
+	path = lib/solady
+	url = https://github.com/Vectorized/solady
+[submodule "lib/forge-std"]
+	path = lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "lib/solarray"]
+	path = lib/solarray
+	url = https://github.com/evmcheb/solarray
+[submodule "offchain-tools"]
+	path = offchain-tools
+	url = https://github.com/nightwatchwalks/offchain-tools
+[submodule "lib/creator-core-solidity"]
+	path = lib/creator-core-solidity
+	url = https://github.com/manifoldxyz/creator-core-solidity
+[submodule "lib\\creator-core-solidity"]
+	branch = v3.0.0
+[submodule "lib/libraries-solidity"]
+	path = lib/libraries-solidity
+	url = https://github.com/manifoldxyz/libraries-solidity
+[submodule "lib/creator-core-extensions-solidity"]
+	path = lib/creator-core-extensions-solidity
+	url = https://github.com/manifoldxyz/creator-core-extensions-solidity
+[submodule "lib/openzeppelin-contracts"]
+	path = lib/openzeppelin-contracts
+	url = https://github.com/Openzeppelin/openzeppelin-contracts
+[submodule "lib\\openzeppelin-contracts"]
+	branch = v4.8.0
+[submodule "lib/openzeppelin-contracts-upgradeable"]
+	path = lib/openzeppelin-contracts-upgradeable
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts-upgradeable
+[submodule "lib\\openzeppelin-contracts-upgradeable"]
+	branch = v4.8.3
+[submodule "lib/closedsea"]
+	path = lib/closedsea
+	url = https://github.com/vectorized/closedsea

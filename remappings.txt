@@ -1,0 +1,16 @@
+forge-std/=lib/forge-std/src/
+solmate/=lib/solmate/src/
+erc721a/=lib/erc721a/contracts/
+chainlink/=lib/chainlink-brownie-contracts/contracts/src/
+openzeppelin-erc721/=lib/openzeppelin-contracts/contracts/token/ERC721/
+solady/=lib/solady/src/
+solady-tests/=lib/solady/test/
+solarray/=lib/solarray/src/
+manifold-creator-core/=lib/creator-core-solidity/
+@manifoldxyz/creator-core-solidity/=lib/creator-core-solidity/
+@manifoldxyz/libraries-solidity/=lib/libraries-solidity/
+manifold-creator-core-extensions/=lib/creator-core-extensions-solidity/
+manifold-libraries/=lib/libraries-solidity/
+@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/
+@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/
+closedsea/=lib/closedsea/src/
