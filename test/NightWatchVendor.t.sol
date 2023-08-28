@@ -19,10 +19,12 @@ contract NightWatchVendorTest is Test {
     address private _partnerA = address(0x3);
     address private _partnerB = address(0x4);
     address private _vaultAddress = address(0x423);
+    address private _vendorSignerAddress =
+        address(0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266);
 
     uint16[] _mockTokenIds;
     bytes _mockSignature =
-        hex"bc84ac997978b5e78d1ae823936504959efcc2edb128deec650754cc8cb57c4f71b03e8df6d7e1aaaf298e374ae790294df745f01fde33c908de16e01156e08c1c";
+        hex"756e89a7076ed9d24b489c7f12ddca1e849653a668ba17f1bd911b1c608ce9f475abf3b7313b48c26fce1d5286f3b12ea60d5243388bf924f7072a7ca1e9ac611c";
     uint256 _mockRandomnessHash =
         44665504314655073991200450518861547724076055838120490854382706591569565158276;
 
@@ -42,7 +44,7 @@ contract NightWatchVendorTest is Test {
         _nightWatchVendor = new NightWatchVendor(
             _nightWatch,
             _vaultAddress,
-            vm.envAddress("VENDOR_SIGNER_ADDRESS"),
+            _vendorSignerAddress,
             _partnerA,
             _partnerB,
             6825
@@ -366,7 +368,7 @@ contract NightWatchVendorTest is Test {
         _nightWatchVendor.claimTokens(
             address(0x777),
             _mockTokenIds,
-            hex"cc84ac997978b5e78d1ae823936504959efcc2edb128deec650754cc8cb57c4f71b03e8df6d7e1aaaf298e374ae790294df745f01fde33c908de16e01156e08c1c"
+            hex"756e89a7076ed9d24b489c7f12ddca1e849653a668ba17f1bd911b1c608ce9f475abf3b7313b48c26fce1d5286f3b12ea60d5243388bf924f7072a7ca1e9ac611d"
         );
     }
 
@@ -463,7 +465,7 @@ contract NightWatchVendorTest is Test {
         new NightWatchVendor(
             _nightWatch,
             address(0),
-            vm.envAddress("VENDOR_SIGNER_ADDRESS"),
+            _vendorSignerAddress,
             _partnerA,
             _partnerB,
             6825
@@ -481,7 +483,7 @@ contract NightWatchVendorTest is Test {
         new NightWatchVendor(
             _nightWatch,
             _vaultAddress,
-            vm.envAddress("VENDOR_SIGNER_ADDRESS"),
+            _vendorSignerAddress,
             address(0),
             _partnerB,
             6825
@@ -490,7 +492,7 @@ contract NightWatchVendorTest is Test {
         new NightWatchVendor(
             _nightWatch,
             _vaultAddress,
-            vm.envAddress("VENDOR_SIGNER_ADDRESS"),
+            _vendorSignerAddress,
             _partnerA,
             address(0),
             6825
