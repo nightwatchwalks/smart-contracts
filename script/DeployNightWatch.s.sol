@@ -11,8 +11,7 @@ import {NightWatchPaymentDivider} from "../src/NightWatchPaymentDivider.sol";
 /// @author @YigitDuman
 contract Deploy is Script {
     /// @notice Base URI for token metadata
-    string public metadataURI =
-        "https://metadata-server.impossibletrios.art/get/";
+    string public metadataURI = "loading"; // "https://metadata-server.impossibletrios.art/get/";
 
     function run() external {
         uint256 privateKey = vm.envUint("DEPLOYER_PRIVATE_KEY");
