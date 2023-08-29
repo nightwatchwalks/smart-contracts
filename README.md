@@ -11,10 +11,12 @@ Made by [Kaybid](https://twitter.com/KaybidSteps) and [Yigit Duman](https://twit
 - Remove all the generated images from S3 in case of testing leftovers. Create generated-gifs folder and make it public.
 - Reset redis server
 - Ensure deployment configuration is correct for deployment scripts.
+- Delete /out folder.
 - Deploy NightWatchPaymentDivider, NightWatchMetadata, NightWatch, contracts consecutively.
+- Add NightWatch contract address to infura smart contract whitelist address.
 - Map gifs randomly using the contract deployment blockhash.
 - Update AWS lambda function configuration.
-- Update metadata-server configuration.
+- Update metadata-server configuration. Increase vCPU and memory.
 - Genereate the token data with nw-offchain-tools using the contract deployment blockhash as the random seed.
 - Use `NightWatch.fillTokenData` in 10 batches to upload the data on-chain.
 - Mint all tokens to the vault.
@@ -26,10 +28,13 @@ Made by [Kaybid](https://twitter.com/KaybidSteps) and [Yigit Duman](https://twit
 - Update configuration and run event-storage-server on nw-offchain-tools
 - Update configuration on websites
 - Approve NightWatchVendor for vault address.
+- Update metadata contract of Night Watch to send refresh metadata request on all tokens.
+- Manually refresh metadata of all tokens to be sure
 - Reduce metadata server's and lambda function's default cache time to 60 seconds.
-- Refresh metadata of all tokens
+- Update OpenSea page (description, profile picture, etc.)
 - Run sale-website.
 - Add buy now button to the main website.
+- Reduce vCPU and memory to production levels for metadata-server.
 - Transfer all ownerships to Gnosis.
 - After some time, when you are sure there are no problems with merge and token data, use `NightWatch.lockState` to lock changing states.
 
