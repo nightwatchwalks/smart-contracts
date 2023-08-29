@@ -63,8 +63,8 @@ async function clearTokenData() {
 	console.log("Transaction confirmed.");
 }
 
-console.log("Clearing token data...");
-await clearTokenData();
+// console.log("Clearing token data...");
+// await clearTokenData();
 
 console.log("Filling token data...");
 await fillTokenData();
