@@ -1,6 +1,6 @@
 import * as dotenv from "dotenv";
 import { createPublicClient, createWalletClient, http, parseGwei } from "viem";
-import { goerli, mainnet } from "viem/chains";
+import { goerli, mainnet, sepolia } from "viem/chains";
 import { privateKeyToAccount } from "viem/accounts";
 import nightWatchContractAbi from "./NightWatch.abi.json" assert { type: "json" };
 dotenv.config();
@@ -98,7 +98,13 @@ function getChain() {
 
 	const chainId = Number(getEnv("CHAIN_ID"));
 
-	return chainId === 31337 ? anvilLocalhost : chainId === 5 ? goerli : mainnet;
+	return chainId === 31337
+		? anvilLocalhost
+		: chainId === 5
+		? goerli
+		: chainId === 11155111
+		? sepolia
+		: mainnet;
 }
 
 function getEnv(key) {
