@@ -20,8 +20,8 @@ contract NightWatchVendor is Owned(msg.sender), ReentrancyGuard {
     NightWatch private _nightWatch;
     address private _vaultAddress;
     address private _signer;
-    address private immutable _partnerA;
-    address private immutable _partnerB;
+    address private _partnerA;
+    address private _partnerB;
 
     /*//////////////////////////////////////////////////////////////
                                  STATES
@@ -154,6 +154,24 @@ contract NightWatchVendor is Owned(msg.sender), ReentrancyGuard {
     /// @param totalSold amount of tokens sold
     function setTotalSold(uint256 totalSold) external onlyOwner {
         _totalSold = totalSold;
+    }
+
+    /// @notice Owner only function set partner A address
+    function setPartnerAAddress(address partnerA) external onlyOwner {
+        if (partnerA == address(0)) {
+            revert NoZeroAddress();
+        }
+
+        _partnerA = partnerA;
+    }
+
+    /// @notice Owner only function set partner B address
+    function setPartnerBAddress(address partnerB) external onlyOwner {
+        if (partnerB == address(0)) {
+            revert NoZeroAddress();
+        }
+
+        _partnerB = partnerB;
     }
 
     /*//////////////////////////////////////////////////////////////

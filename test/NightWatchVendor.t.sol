@@ -126,6 +126,16 @@ contract NightWatchVendorTest is Test {
         _nightWatchVendor.setTotalSold(1);
     }
 
+    function testSetPartnerAAddressOwnerOnly() public {
+        _expectRevertAsNonOwner();
+        _nightWatchVendor.setPartnerAAddress(address(0x33));
+    }
+
+    function testSetPartnerBAddressOwnerOnly() public {
+        _expectRevertAsNonOwner();
+        _nightWatchVendor.setPartnerBAddress(address(0x33));
+    }
+
     function _expectRevertAsNonOwner() private {
         vm.expectRevert("UNAUTHORIZED");
         vm.prank(address(0x1));
