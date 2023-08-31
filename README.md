@@ -16,11 +16,12 @@ Made by [Kaybid](https://twitter.com/KaybidSteps) and [Yigit Duman](https://twit
 - Add NightWatch contract address to infura smart contract whitelist address.
 - Map gifs randomly using the contract deployment blockhash.
 - Update AWS lambda function configuration.
-- Update metadata-server configuration. Increase vCPU and memory.
-- Genereate the token data with nw-offchain-tools using the contract deployment blockhash as the random seed.
+- Update metadata-server configuration.
+- Generate the token data with nw-offchain-tools using the contract deployment blockhash as the random seed.
 - Use `NightWatch.fillTokenData` in 10 batches to upload the data on-chain.
 - Mint all tokens to the vault.
 - Use nw-offchain-tools/generate-all-token-images
+- Increase metadata server's vCPU and memory.
 - Resume metadata server.
 - Update metadata address.
 - Use `NightWatch.setMergePaused(false)` to start merge events.

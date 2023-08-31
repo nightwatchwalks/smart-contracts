@@ -27,7 +27,7 @@ contract DeployVendor is Script {
             vendorSignerAddress,
             partnerAAddress,
             partnerBAddress,
-            6825
+            6043
         );
         vm.stopBroadcast();
     }
